@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<div class="alert alert-success" >
+  <strong align="center">Add a new Post</strong>
+</div>
+<div class="container">
+
+
+<%= form_for @post, :url => { :action => "create"} do |f| %>
+<table class="table">
+	<tr>
+	<td><%= f.label :title %></td><td><%= f.text_field :title, :onblur => "if(this.value.length<1) alert('Title is empty');"  %></td>
+	</tr>
+	<tr>
+	<td><%= f.label :content %></td><td><%= f.text_area :content, :size=>"50", :onblur => "if(this.value.length<1) alert('Content is empty');"%></td>
+	</tr>
+	<tr><td><%= link_to "Back to Post", post_index_path %></td><td><%= f.submit "Add a new Post", class: "btn btn-info" %></td></tr>
+</table>
+<% end %>
+</div>
+

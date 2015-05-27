@@ -1,0 +1,26 @@
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<div class="alert alert-success" >
+  <strong align="center">BLOG Posts List</strong>
+</div>
+<div class="container">
+<table class="table" >
+	<thead>
+      <tr>
+        <th>Post Name</th>
+        <th>Contents</th>
+        <th>Last Updated</th>
+      </tr>
+    </thead>  
+	<tbody>  
+		<tr>
+		<td><%= @post.title %></td>
+		<td><%= @post.content %></td>
+		<td><%= @post.created_at %></td>
+		</tr>
+		<tr><td colspan=3><%= link_to "Back to Post list", post_index_path %></td></tr>
+	</tbody>
+</table>
+</div>
